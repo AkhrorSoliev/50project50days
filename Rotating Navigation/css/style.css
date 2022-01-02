@@ -142,6 +142,16 @@ body {
   transform: translateX(-200%);
 }
 
+.sitenav-link {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.sitenav-link:hover {
+  color: #ff7979;
+}
+
 .fa-home {
 }
 .fa-user-alt {

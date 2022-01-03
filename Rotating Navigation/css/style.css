@@ -1,4 +1,4 @@
-/* FONT FAMILY */
+/* GLOBAL */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;800;900&display=swap');
 
 * {
@@ -8,30 +8,38 @@
 body {
   font-family: 'Lato', sans-serif;
   background-color: #333;
-  color: #222;
   margin: 0;
   padding: 0;
+  color: #222;
   height: 100vh;
   overflow-x: hidden;
 }
 
-/* container */
 .container {
   background-color: #fafafa;
-  transform-origin: top left;
-  min-width: 100vh;
+  min-width: 100vw;
   padding: 50px;
   transition: transform 0.5s linear;
+  transform-origin: top left;
 }
 
 .container.show-nav {
   transform: rotate(-20deg);
 }
 
+.container.show-nav + .sitenav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
 .circle-container {
   position: fixed;
   top: -100px;
   left: -100px;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
 }
 
 .circle {
@@ -43,20 +51,16 @@ body {
   transition: transform 0.5s linear;
 }
 
-.container.show-nav .circle {
-  transform: rotate(-70deg);
-}
-
 .circle button {
   position: absolute;
+  cursor: pointer;
   top: 50%;
   left: 50%;
   height: 100px;
   background-color: transparent;
   border: 0;
-  font-size: 26px;
   color: #fff;
-  cursor: pointer;
+  font-size: 26px;
 }
 
 .circle button:focus {
@@ -92,17 +96,11 @@ body {
   color: #333;
   line-height: 1.5;
 }
-
-.content-img {
+.contenet-img {
   display: flex;
   width: 100%;
-  object-fit: cover;
   height: 250px;
-}
-
-.container.show-nav + .sitenav li {
-  transform: translateX(0);
-  transition-delay: 0.3s;
+  object-fit: cover;
 }
 
 .sitenav {
@@ -113,23 +111,16 @@ body {
 }
 
 .sitenav-list {
-  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   padding-left: 30px;
 }
 
 .sitenav-item {
-  text-transform: uppercase;
-  color: #fff;
   margin: 40px 0;
   transform: translateX(-100%);
   transition: transform 0.4s ease-in;
-}
-
-.sitenav-item i {
-  font-size: 20px;
-  margin-right: 10px;
 }
 
 .sitenav-list li + li {
@@ -144,17 +135,14 @@ body {
 
 .sitenav-link {
   text-decoration: none;
+  text-transform: uppercase;
   color: #fff;
-  transition: 0.3s;
 }
 
 .sitenav-link:hover {
   color: #ff7979;
 }
 
-.fa-home {
-}
-.fa-user-alt {
-}
-.fa-envelope {
+.sitenav-link i {
+  margin-right: 10px;
 }

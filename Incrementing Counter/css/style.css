@@ -14,9 +14,24 @@ body {
   margin: 0;
   padding: 0;
   background-color: #8e44ad;
+  color: #fff;
 }
 
 .counter-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 30px 50px;
+  text-align: center;
+}
+
+.counter {
+  font-size: 60px;
+  margin-top: 10px;
+}
+
+@media (max-width: 580px) {
+  body {
+    flex-direction: column;
+  }
 }
